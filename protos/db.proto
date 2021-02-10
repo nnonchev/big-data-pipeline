@@ -1,0 +1,86 @@
+syntax = "proto3";
+package db;
+
+service Api {
+    rpc ReadCollection(ReadCollectionReq) returns (ReadCollectionRes) {};
+    rpc ReadProcessedCollection(ReadProcessedCollectionReq) returns (ReadProcessedCollectionRes) {};
+    rpc InsertOne(InsertOneCollectionReq) returns (InsertCollectionRes) {};
+    rpc InsertMany(InsertManyCollectionReq) returns (InsertCollectionRes) {};
+    rpc UpsertMany(UpsertManyReq) returns (UpsertManyRes) {};
+    rpc DeleteAll(DeleteCollectionReq) returns (DeleteCollectionRes) {};
+}
+
+message ReadCollectionReq {
+    Collection collection = 1;
+    int32 length = 2;
+}
+
+message ReadProcessedCollectionReq {
+    int32 length = 1;
+}
+
+message ReadProcessedCollectionRes {
+    repeated ProcessedRow rows = 1;
+}
+
+message ReadCollectionRes {
+    repeated Row rows = 1;
+}
+
+message InsertOneCollectionReq {
+    Collection collection = 1;
+    Row row = 2;
+}
+
+message InsertManyCollectionReq {
+    Collection collection = 1;
+    repeated Row rows = 2;
+}
+
+message InsertCollectionRes {
+    bool acknowledged = 1;
+}
+
+message DeleteCollectionReq {
+    Collection collection = 1;
+}
+
+message DeleteCollectionRes {
+    bool acknowledged = 1;
+}
+
+message UpsertManyReq {
+    Collection collection = 1;
+    repeated ProcessedRow rows = 2;
+}
+
+message UpsertManyRes {
+    bool acknowledged = 1;
+}
+
+enum Collection {
+    RAW = 0;
+    CLEANED = 1;
+    PROCESSED = 2;
+}
+
+message Row {
+    string country = 1;
+    string campus = 2;
+    string mobility = 3;
+    int32 contracts = 4;
+    string alternative_choice = 5;
+    float distance = 6;
+    bool pro_contract = 7;
+}
+
+message ProcessedRow {
+    string title = 1;
+    string plot_type = 2;
+    repeated PlotPoint points = 3;
+}
+
+message PlotPoint {
+    string x = 1;
+    string y = 2;
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Student form</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app" class="container">
+      <form method="post" id="user-form">
+        <div class="row align-item-center">
+          <div class="col">
+            <label for="country" class="form-label"
+              >Where do you come from?</label
+            >
+            <select required id="country" name="country" class="form-select">
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>E</option>
+              <option>F</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="campus" class="form-label"
+              >What campus are you attending to?</label
+            >
+            <select required id="campus" name="campus" class="form-select">
+              <option>A_A</option>
+              <option>A_B</option>
+              <option>A_C</option>
+              <option>A_D</option>
+              <option>A_E</option>
+              <option>A_F</option>
+
+              <option>B_A</option>
+              <option>B_B</option>
+              <option>B_C</option>
+              <option>B_D</option>
+              <option>B_E</option>
+              <option>B_F</option>
+
+              <option>C_A</option>
+              <option>C_B</option>
+              <option>C_C</option>
+              <option>C_D</option>
+              <option>C_E</option>
+              <option>C_F</option>
+
+              <option>D_A</option>
+              <option>D_B</option>
+              <option>D_C</option>
+              <option>D_D</option>
+              <option>D_E</option>
+              <option>D_F</option>
+
+              <option>E_A</option>
+              <option>E_B</option>
+              <option>E_C</option>
+              <option>E_D</option>
+              <option>E_E</option>
+              <option>E_F</option>
+
+              <option>F_A</option>
+              <option>F_B</option>
+              <option>F_C</option>
+              <option>F_D</option>
+              <option>F_E</option>
+              <option>F_F</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <label for="mobility" class="form-label"
+              >What mean of transport do you use ?</label
+            >
+            <select required id="mobility" name="mobility" class="form-select">
+              <option>car</option>
+              <option>bike</option>
+              <option>foot</option>
+              <option>public transport</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="contracts" class="form-label"
+              >How much contracts/jobs do you already had?</label
+            >
+            <input
+              required
+              id="contracts"
+              name="contracts"
+              class="form-control"
+              min="0"
+              type="number"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <label for="advertisement" class="form-label"
+              >How did you discover Supinfo?</label
+            >
+            <select
+              required
+              id="advertisement"
+              name="advertisement"
+              class="form-select"
+            >
+              <option>social media</option>
+              <option>websites</option>
+              <option>fair</option>
+              <option>fiends</option>
+            </select>
+          </div>
+          <div class="col">
+            <label for="alternative_choice" class="form-label"
+              >If you had to choose another school, which one would it be
+              ?</label
+            >
+            <select
+              required
+              id="alternative_choice"
+              name="alternative_choice"
+              class="form-select"
+            >
+              <option>alternative A</option>
+              <option>alternative B</option>
+              <option>alternative C</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <label for="distance"
+            >How far do you live from the university: Distance km</label
+          >
+          <input
+            required
+            id="distance"
+            name="distance"
+            type="range"
+            class="form-range"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <div class="row mt-3">
+          <div class="col">
+            <div class="form-check">
+              <input
+                id="pro_contract"
+                name="pro_contract"
+                class="form-check-input"
+                type="checkbox"
+              />
+              <label for="pro_contract" class="form-check-label"
+                >Are you currently in a professional contract ?</label
+              >
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-check">
+              <input
+                required
+                id="consent"
+                name="consent"
+                class="form-check-input"
+                type="checkbox"
+              />
+              <label for="consent" class="form-check-label">
+                Do you consent to the processing of your personal data ?<br />
+                You can find details about your data processing
+                <a href="#">here</a>.
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid justify-content-md-end">
+          <button
+            class="btn btn-primary float-right"
+            type="submit"
+            value="Submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

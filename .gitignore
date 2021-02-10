@@ -1,0 +1,9 @@
+*/node_modules
+*/.venv
+*/data
+*venv
+generated
+db-api/db_api/client/*
+*.pyc
+*vim/coc-settings.json
+*.vscode
